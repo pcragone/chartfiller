@@ -1,0 +1,11 @@
+html,body{
+    background-color: #1d1d1d;
+}
+h1.leader {
+    padding-left: 2em;
+}
+
+.tabcontrol .tabs li a {
+    background: #343434;
+    color: #666;
+}

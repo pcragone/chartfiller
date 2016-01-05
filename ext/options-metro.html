@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Chartfiller Defaults</title>
+    <link rel="stylesheet" type="text/css" href="css/metro.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/options.css">
+  </head>
+  <body style="overflow-y: hidden;">
+    <div data-role="charm" id="charmSearch">
+      <h1 class="text-light">Search</h1>
+      <hr class="thin"/>
+      <br />
+      <div class="input-control text full-size">
+        <label>
+          <span class="dropdown-toggle drop-marker-light">Anywhere</span>
+          <ul class="d-menu" data-role="dropdown">
+            <li><a onclick="setSearchPlace(this)">Anywhere</a></li>
+            <li><a onclick="setSearchPlace(this)">Options</a></li>
+            <li><a onclick="setSearchPlace(this)">Files</a></li>
+            <li><a onclick="setSearchPlace(this)">Internet</a></li>
+          </ul>
+        </label>
+        <input type="text">
+        <button class="button"><span class="mif-search"></span></button>
+      </div>
+    </div>
+    
+    <div class="grid tile-area-scheme-dark fg-white">
+
+      <div class="row cells1">
+	<div class="cell">
+	  <h1 class="leader">Chartfiller</h1>
+	</div>
+      </div>
+
+      <div class="row cells12">
+	<div class="cell colspan3">
+	  <div class="tile-area" style="height: 100%; max-height: 100% !important;padding:0">
+
+	    <div class="tile-group">
+              <span class="tile-group-title">General Settings</span>
+              <div class="tile-container">
+		
+		<a href="#" class="tile bg-teal fg-white" data-role="tile" id="btnSettings">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-cogs"></span>
+		  </div>
+		  <span class="tile-label">Configure</span>
+		</a>
+		
+		<a href="https://chrome.google.com/webstore/detail/emscharts-filler/nbhcjidkipddkpjehegpgjiijedokgnf?hl=en"
+		   class="tile bg-darkRed fg-white" data-role="tile">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-google"></span>
+		  </div>
+		  <span class="tile-label">Chrome Store</span>
+		</a>
+		
+		<a href="https://github.com/cmattoon/chartfiller/issues" class="tile bg-green fg-white" data-role="tile">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-bug"></span>
+		  </div>
+		  <span class="tile-label">Bug Reports /<br> Feature Requests</span>
+		</a>
+		
+		<a class="tile bg-darkBlue fg-white" data-role="tile"
+		   href="https://www.emscharts.com/">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-cloud"></span>
+		  </div>
+		  <span class="tile-label">EMS Charts</span>
+		</a>
+		
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="cell colspan6">
+	  <div class="tabcontrol" data-role="tabcontrol">
+	    <ul class="tabs">
+	      <li><a href="#page1">Page 1</a></li>
+	      <li><a href="#page2">Page 2</a></li>
+	      <li><a href="#page3">Page 3</a></li>
+	      <li><a href="#page4">Page 4</a></li>
+	      <li><a href="#page4">Page 5</a></li>
+	      <li><a href="#page4">Page 6</a></li>
+	      <li><a href="#page4">Page 7</a></li>
+	      <li><a href="#page4">Page 8</a></li>
+	    </ul>
+	    
+	    <div class="frames">
+	      <div class="frame" id="page1"> Page 1</div>
+	      <div class="frame" id="page2"> Page 2</div>
+	      <div class="frame" id="page3"> Page 3</div>
+	      <div class="frame" id="page4"> Page 4</div>
+	      <div class="frame" id="page5"> Page 5</div>
+	      <div class="frame" id="page6"> Page 6</div>
+	      <div class="frame" id="page7"> Page 7</div>
+	      <div class="frame" id="page8"> Page 8</div>
+	    </div><!-- / .frames -->
+	  </div><!-- / .tabcontrol -->
+	</div>
+	
+      </div>
+   
+      <div id="chSettings" data-role="charm" data-position="left">
+	<h1>General Settings</h1>
+	<p>
+	  Settings go here
+	</p>
+      </div>
+      
+    <script src="js/jquery.js"></script>
+    <script src="js/metro.min.js"></script>
+    <script src="js/options.js"></script>
+  </body>
+</html>

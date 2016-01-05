@@ -1,0 +1,47 @@
+{
+    "name": "EMSCharts Filler",
+    "short_name": "Chartfiller",
+    "version": "1.0.0",
+    "description": "Autofills EMSCharts with defaults",
+    "manifest_version": 2,
+    "background": {
+	"persistent": false,
+	"scripts": [
+	    "js/background.js"
+	]
+    },
+    "icons": {
+	"16": "icons/icon16.png",
+	"32": "icons/icon32.png",
+	"48": "icons/icon48.png",
+	"128": "icons/icon128.png"
+    },
+    "options_page": "options-metro.html",
+    "permissions": [
+	"https://*.emscharts.com/pr/",
+	"storage"
+    ],
+    "web_accessible_resources": [
+    	"js/inject.js"
+    ],
+    "content_scripts": [
+	{
+	    "matches": [
+		"https://www.emscharts.com/pr/page2.cfm?*",
+		"https://www.emscharts.com/pr/page3.cfm?*",
+		"https://www.emscharts.com/pr/page4.cfm?*",
+		"https://www.emscharts.com/pr/page5.cfm?*",
+		"https://www.emscharts.com/pr/page8.cfm?*"
+	    ],
+	    "js": [
+		"js/jquery.js",
+		"js/charts.js"
+	    ],
+	    "run_at": "document_start"
+	}
+    ],
+    "browser_action": {
+	"default_title": "EMSCharts Filler",
+	"default_popup": "popup.html"
+    }
+}
