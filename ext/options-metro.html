@@ -3,13 +3,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+
     <title>Chartfiller Defaults</title>
     <link rel="stylesheet" type="text/css" href="css/metro.min.css">
     <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
     <link rel="stylesheet" type="text/css" href="css/options.css">
   </head>
-  <body style="overflow-y: hidden;">
+  <body>
     <div data-role="charm" id="charmSearch">
       <h1 class="text-light">Search</h1>
       <hr class="thin"/>
@@ -28,9 +28,8 @@
         <button class="button"><span class="mif-search"></span></button>
       </div>
     </div>
-    
-    <div class="grid tile-area-scheme-dark fg-white">
 
+    <div class="grid tile-area-scheme-dark fg-white">
       <div class="row cells1">
 	<div class="cell">
 	  <h1 class="leader">Chartfiller</h1>
@@ -38,65 +37,271 @@
       </div>
 
       <div class="row cells12">
-	<div class="cell colspan3">
+	<div class="cell colspan4">
 	  <div class="tile-area" style="height: 100%; max-height: 100% !important;padding:0">
 
 	    <div class="tile-group">
               <span class="tile-group-title">General Settings</span>
               <div class="tile-container">
-		
-		<a href="#" class="tile bg-teal fg-white" data-role="tile" id="btnSettings">
+
+		<a id="btnSettings" href="#" class="tile tile-wide-x bg-teal fg-white" data-role="tile">
 		  <div class="tile-content iconic">
 		    <span class="icon mif-cogs"></span>
 		  </div>
 		  <span class="tile-label">Configure</span>
 		</a>
-		
-		<a href="https://chrome.google.com/webstore/detail/emscharts-filler/nbhcjidkipddkpjehegpgjiijedokgnf?hl=en"
-		   class="tile bg-darkRed fg-white" data-role="tile">
-		  <div class="tile-content iconic">
-		    <span class="icon mif-google"></span>
-		  </div>
-		  <span class="tile-label">Chrome Store</span>
-		</a>
-		
-		<a href="https://github.com/cmattoon/chartfiller/issues" class="tile bg-green fg-white" data-role="tile">
+
+
+		<a href="https://github.com/cmattoon/chartfiller/issues"
+                   class="tile bg-green fg-white" data-role="tile">
 		  <div class="tile-content iconic">
 		    <span class="icon mif-bug"></span>
 		  </div>
-		  <span class="tile-label">Bug Reports /<br> Feature Requests</span>
+		  <span class="tile-label">
+                    Bug Reports /<br> Feature Requests
+                  </span>
 		</a>
-		
+
+                <!-- Charts -->
 		<a class="tile bg-darkBlue fg-white" data-role="tile"
-		   href="https://www.emscharts.com/">
+		   href="https://www.emscharts.com">
 		  <div class="tile-content iconic">
 		    <span class="icon mif-cloud"></span>
 		  </div>
 		  <span class="tile-label">EMS Charts</span>
 		</a>
-		
+
+                <!-- Facebook -->
+		<a class="tile tile-small bg-darkBlue fg-white" data-role="tile"
+		   href="https://www.facebook.com/chartfiller"
+                   title="Facebook">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-facebook"></span>
+		  </div>
+		</a>
+
+                <!-- Chrome Web Store Link -->
+		<a href="https://chrome.google.com/webstore/detail/emscharts-filler/nbhcjidkipddkpjehegpgjiijedokgnf?hl=en"
+		   class="tile tile-small bg-darkRed fg-white" data-role="tile"
+                   title="Chartfiller on Chrome Web Store">
+		  <div class="tile-content iconic">
+		    <span class="icon mif-google"></span>
+		  </div>
+		</a>
+
 	      </div>
 	    </div>
 	  </div>
 	</div>
 
-	<div class="cell colspan6">
+	<div class="cell colspan7">
 	  <div class="tabcontrol" data-role="tabcontrol">
 	    <ul class="tabs">
-	      <li><a href="#page1">Page 1</a></li>
 	      <li><a href="#page2">Page 2</a></li>
 	      <li><a href="#page3">Page 3</a></li>
 	      <li><a href="#page4">Page 4</a></li>
-	      <li><a href="#page4">Page 5</a></li>
-	      <li><a href="#page4">Page 6</a></li>
-	      <li><a href="#page4">Page 7</a></li>
-	      <li><a href="#page4">Page 8</a></li>
+	      <li><a href="#page5">Page 5</a></li>
+	      <li><a href="#page6">Page 6</a></li>
+	      <li><a href="#page7">Page 7</a></li>
+	      <li><a href="#page8">Page 8</a></li>
 	    </ul>
-	    
+
 	    <div class="frames">
-	      <div class="frame" id="page1"> Page 1</div>
-	      <div class="frame" id="page2"> Page 2</div>
-	      <div class="frame" id="page3"> Page 3</div>
+	      <div class="frame" id="page2">
+                <h4>Page 2 - CC/HPI</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid">
+                  <div class="row cells3">
+                    <div class="cell">
+                      <h5>Chief Complaint</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="PRMAIN_cc" class="emsc"></textarea>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <h5>History of Present Illness (HPI)</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="PRMAIN_hpi" class="emsc"></textarea>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <h5>Scene Description</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="scene_description" class="emsc"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells12">
+                    <div class="cell">
+                      <label>Duration</label>
+                      <div class="input-control text full-size">
+                        <input name="PRMAIN_ccduration" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell colspan3">
+                      <label>(Units)</label>
+                      <div class="input-control select full-size">
+                        <select name="PRMAIN_ccdurunits">
+                          <option value="1235">Seconds</option>
+                          <option value="1240">Minutes</option>
+                          <option value="1245">Hours</option>
+                          <option value="1250">Days</option>
+                          <option value="1255">Weeks</option>
+                          <option value="1260">Months</option>
+                          <option value="1265">Years</option>
+                          <option value="1265">A long, long time ago</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="cell colspan8">
+                      <label>Patient Belongings</label>
+                      <div class="input-control text full-size">
+                        <input name="PRMAIN_belongings" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row cells12">
+                    <div class="cell colspan4">
+                      <label>Stretcher Purpose</label>
+                      <div class="input-control text full-size">
+                        <input name="stretcher_purpose_descr" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell colspan4">
+                      <label>First Agency Unit On Scene?</label>
+                      <div class="input-control select full-size">
+                        <select class="emsc" name="PRMAIN_first_on_scene">
+                          <option value="-25">Not Applicable</option>
+                          <option value="-20">Not Recorded</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell colspan4">
+                      <label>ALS Assessment</label>
+                      <div class="input-control select full-size">
+                        <select class="emsc" name="PRMAIN_first_on_scene">
+                          <option value="1">Not Completed</option>
+                          <option value="2">Completed for Suspected Illness</option>
+                          <option value="3">Completed for Rule-Out Diagnosis</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells3">
+                    <div class="cell">
+                      <label>Patient Moved via</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_moved_via" class="emsc">
+                          <option value="4880">Stretcher</option>
+                          <option value="4865">Assist/Walk</option>
+                          <option value="4885">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Position in Truck</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_position" class="emsc">
+                          <option value="4910">Semi-Fowlers</option>
+                          <option value="4895">Fowlers</option>
+                          <option value="4915">Sitting</option>
+                          <option value="4920">Supine</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Patient to Hospital via</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_moved_from" class="emsc">
+                          <option value="4930">Assist/Walk</option>
+                          <option value="4935">Stretcher</option>
+                          <option value="4951">Wheelchair</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /page2 -->
+
+	      <div class="frame" id="page3">
+                <h4>Page 3 - Neuro, GCS, Airway</h4>
+                <hr class="thin bg-grayLighter">
+
+                <div class="grid">
+                  <div class="row cells2">
+
+                    <div class="cell">
+                      <label>Level of Consciousness</label>
+                      <div class="input-control select full-size">
+                        <select name="head_conciousness" class="emsc">
+                          <option value="-1"> </option>
+                          <option value="21">Agitated</option>
+                          <option value="1">Alert</option>
+                          <option value="3">Responds to Pain</option>
+                          <option value="2">Responds to Voice</option>
+                          <option value="41">Restless</option>
+                          <option value="4">Unresponsive</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="cell">
+                      <label>Stroke Scale</label>
+                      <div class="input-control text full-size">
+                        <select name="stroke_scale">
+                          <option value="NULL"></option>
+                          <option value="3275">Cincinnati Negative</option>
+                          <option value="3280">Cincinnati Non-Conclusive</option>
+                          <option value="3285">Cincinnati Positive</option>
+                          <option value="3290">LA Negative</option>
+                          <option value="3295">LA Non-Conclusive</option>
+                          <option value="3300">LA Positive</option>
+                          <option value="4">MEND Negative</option>
+                          <option value="5">MEND Non-Conclusive</option>
+                          <option value="6">MEND Positive</option>
+                          <option value="1">Massachusetts Negative</option>
+                          <option value="2">Massachusetts Non-Conclusive</option>
+                          <option value="3">Massachusetts Positive</option>
+                          <option value="7">NIH Negative</option>
+                          <option value="8">NIH Non-Conclusive</option>
+                          <option value="9">NIH Positive</option>
+                          <option value="-25">Not Applicable</option>
+                          <option value="-5">Not Available</option>
+                          <option value="-10">Not Known</option>
+                          <option value="10">Other Stroke Scale Negative</option>
+                          <option value="11">Other Stroke Scale Non-Conclusive</option>
+                          <option value="12">Other Stroke Scale Positive</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row cells3">
+                    <div class="cell">
+                      <label>Neuro Comments/Head Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="head_findings" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Airway Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="AIR_COMMENTS" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+            </div><!-- /page3 -->
+
 	      <div class="frame" id="page4"> Page 4</div>
 	      <div class="frame" id="page5"> Page 5</div>
 	      <div class="frame" id="page6"> Page 6</div>
@@ -105,18 +310,26 @@
 	    </div><!-- / .frames -->
 	  </div><!-- / .tabcontrol -->
 	</div>
-	
       </div>
-   
+
       <div id="chSettings" data-role="charm" data-position="left">
-	<h1>General Settings</h1>
-	<p>
-	  Settings go here
-	</p>
+	<h3>General Settings</h3>
+        <hr class="thin">
+        <div class="grid">
+          <div class="row cells1">
+            <div class="cell">
+              <label class="switch">
+                <input type="checkbox" name="enable_sync" class="config">
+                <span class="check"></span>
+              </label>
+              <label>Enable Sync storage? </label>
+            </div>
+          </div>
+        </div>
       </div>
-      
-    <script src="js/jquery.js"></script>
-    <script src="js/metro.min.js"></script>
-    <script src="js/options.js"></script>
+
+      <script src="js/jquery.js"></script>
+      <script src="js/metro.js"></script>
+      <script src="js/options.js"></script>
   </body>
 </html>
