@@ -1,5 +1,6 @@
 html,body{
     background-color: #1d1d1d;
+    overflow-y: hidden;
 }
 h1.leader {
     padding-left: 2em;
@@ -8,4 +9,14 @@ h1.leader {
 .tabcontrol .tabs li a {
     background: #343434;
     color: #666;
+}
+#game-wrap {
+    display: none;
+}
+#game {
+    background: #969696;
+}
+
+canvas#info {
+    display: none;
 }

@@ -1,472 +1,617 @@
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Chartfiller Defaults</title>
     <link rel="stylesheet" type="text/css" href="css/metro.min.css">
+    <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
     <link rel="stylesheet" type="text/css" href="css/options.css">
   </head>
   <body>
-    
-    <div id="accordion">
-      <h3>Page 2 Settings</h3>
-      <div>
-        <table>
-          <tr>
-            <td class="l">
-              Chief Complaint
-            </td>
-            <td class="r">
-              <textarea id="pg2_chief_complaint"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              ALS Assessment
-            </td>
-            <td class="r">
-              <select id="pg2_als_assessment">
-                <option value="1">Not Completed</option>
-                <option value="2">Completed for Suspected Illness</option>
-                <option value="3">Completed for Rule-Out Diagnosis</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Duration
-            </td>
-            <td class="r">
-              <input type="number" max="99" min="0" step="1" id="pg2_duration">
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Duration Units
-            </td>
-            <td class="r">
-              <select id="pg2_duration_units">
-                <option value="1235">Seconds</option>
-                <option value="1240">Minutes</option>
-                <option value="1245">Hours</option>
-                <option value="1250">Days</option>
-                <option value="1255">Weeks</option>
-                <option value="1260">Months</option>
-                <option value="1265">Years</option>
-                <option value="0" disabled="disabled">Ever since my accident back in '74...</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              HPI
-            </td>
-            <td class="r">
-              <textarea id="pg2_hpi"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Scene Description
-            </td>
-            <td class="r">
-              <textarea id="pg2_scene_description"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              First Agency Unit On Scene?
-            </td>
-            <td class="r">
-              <select id="pg2_first_on_scene">
-                <option value="-25">Not Applicable</option>
-                <option value="-20">Not Recorded</option>
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-              </select>
-            </td>
-          </tr>                    
-          <tr>
-            <td class="l">
-              Patient Belongings
-            </td>
-            <td class="r">
-              <textarea id="pg2_belongings"></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              To ambulance via
-            </td>
-            <td class="r">
-              <select id="pg2_to_truck">
-                <option value="4880">Stretcher</option>
-                <option value="4865">Assist/Walk</option>
-                <option value="4885">Other</option>
-                <option value="0" disabled="disabled">driveway, past three working vehicles</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Position in ambulance
-            </td>
-            <td class="r">
-              <select id="pg2_position">
-                <option value="4910">Semi-Fowlers</option>
-                <option value="4895">Fowlers</option>
-                <option value="4915">Sitting</option>
-                <option value="4920">Supine</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              From ambulance via
-            </td>
-            <td class="r">
-              <select id="pg2_from_truck">
-                <option value="4930">Assist/Walk</option>
-                <option value="4935">Stretcher</option>
-                <option value="4951">Wheelchair</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Stretcher purpose
-            </td>
-            <td class="r">
-              <input id="pg2_stretcher_purpose" type="text">
-            </td>
-          </tr>                    
-        </table>
-	
-      </div>
-      <h3>Page 3 Settings</h3>
-      <div>
-        <table>
-          <tr>
-            <td class="l">
-              Neuro comments
-            </td>
-            <td class="r">
-              <input type="text" id="pg3_neuro_comments">
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Stroke Scale
-            </td>
-            <td class="r">
-              <select id="pg3_stroke_scale">
-                <option value="-25">Not Applicable</option>
-                <option value="3275">Cincinnati Negative</option>
-                <option value="3280">Cincinnati Inconclusive</option>
-                <option value="3285">Cincinnati Positive</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              GCS Eye
-            </td>
-            <td class="r">
-              <select id="pg3_gcs_eye">
-                <option value="4">4 - Spontaneous</option>
-                <option value=""></option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              GCS Verbal
-            </td>
-            <td class="r">
-              <select id="pg3_gcs_verbal">
-                <option value="5">5 - Oriented</option>
-                <option value=""></option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              GCS Motor
-            </td>
-            <td class="r">
-              <select id="pg3_gcs_motor">
-                <option value="6">6 - Obeys Command</option>
-                <option value=""></option>
-              </select>
-            </td>
-          </tr>
-        </table>
-      </div>
-      
-      
-      <h3>Page 4 Settings</h3>
-      <div>
-        <table>
-          <tr>
-            <td class="l">
-              Respiratory Comments
-            </td>
-            <td class="r">
-              <input type="text" id="pg4_resp_comments">
-            </td>
-          </tr>
-          <tr>
-            <td class="l">
-              Cardiovascular Comments
-            </td>
-            <td class="r">
-              <input type="text" id="pg4_cardiac_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Radial (Left)
-            </td>
-            <td class="r">
-              <select id="pg4_radial_l">
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-                <option value=""></option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Radial (Right)
-            </td>
-            <td class="r">
-              <select id="pg4_radial_r">
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-                <option value=""></option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Femoral (Left)
-            </td>
-            <td class="r">
-              <select id="pg4_fem_l">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Femoral (Right)
-            </td>
-            <td class="r">
-              <select id="pg4_fem_r">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Carotid (Left)
-            </td>
-            <td class="r">
-              <select id="pg4_carotid_l">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Carotid (Right)
-            </td>
-            <td class="r">
-              <select id="pg4_carotid_r">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Dorsalis (Left)
-            </td>
-            <td class="r">
-              <select id="pg4_dors_l">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Dorsalis (Right)
-            </td>
-            <td class="r">
-              <select id="pg4_dors_r">
-                <option value=""></option>
-                <option value="1">Strong</option>
-                <option value="22">Normal</option>
-                <option value="4">Not Checked</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-      </div>
-
-
-
-      <h3>Page 5 Settings</h3>
-      <div>
-        <table>
-          <tr>
-            <td class="l">
-              Head Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_head_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Neck Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_neck_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Chest Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_chest_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Abdomen (Appearance)
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ap_appearance">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Abdomen (Palpation)
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ap_palpation">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Abdomen (Bowel Sounds)
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ap_bowel_sounds">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Abdomen (Comments)
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ap_findings">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Pelvis Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_pelvis_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Back Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_back_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Extremity Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ex_comments">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Restraints
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ex_restraints">
-            </td>
-          </tr><tr>
-            <td class="l">
-              Skin Findings
-            </td>
-            <td class="r">
-              <input type="text" id="pg5_ex_skin_findings">
-            </td>
-          </tr>
-        </table>
-      </div>
-
-
-      <h3>Page 8 Settings</h3>
-      <div>
-        <table>
-          <tr>
-            <td class="l">
-              "On Scene" Comment
-            </td>
-            <td class="r">
-              <textarea id="pg8_at_ref"></textarea>
-            </td>
-          </tr><tr>
-            <td class="l">
-              "Transporting" Comment
-            </td>
-            <td class="r">
-              <textarea id="pg8_lv_ref"></textarea>
-            </td>
-          </tr><tr>
-            <td class="l">
-              "At Hospital" Comment
-            </td>
-            <td class="r">
-              <textarea id="pg8_at_rec"></textarea>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Canned Line 1
-            </td>
-            <td class="r">
-              <textarea id="pg8_can_1"></textarea>
-            </td>
-          </tr><tr>
-            <td class="l">
-              Canned Line 2
-            </td>
-            <td class="r">
-              <textarea id="pg8_can_2"></textarea>
-            </td>
-          </tr>
-        </table>
+    <div data-role="charm" id="charmSearch">
+      <h1 class="text-light">Search</h1>
+      <hr class="thin"/>
+      <br />
+      <div class="input-control text full-size">
+        <label>
+          <span class="dropdown-toggle drop-marker-light">Anywhere</span>
+          <ul class="d-menu" data-role="dropdown">
+            <li><a onclick="setSearchPlace(this)">Anywhere</a></li>
+            <li><a onclick="setSearchPlace(this)">Options</a></li>
+            <li><a onclick="setSearchPlace(this)">Files</a></li>
+            <li><a onclick="setSearchPlace(this)">Internet</a></li>
+          </ul>
+        </label>
+        <input type="text">
+        <button class="button"><span class="mif-search"></span></button>
       </div>
     </div>
 
-    <div id="status"></div>
-    <div>
-      <input id="syncme" name="syncme" type="checkbox" value="1"> Save to Chrome.storage.sync 
-      (Your settings will transfer to all Chrome browsers where you are logged in)
-    </div>
-    <div class="submit-row">
-      <button id="save">Save</button>
-    </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/metro.min.js"></script>
-    <script src="js/options.js"></script>
+    <div class="grid tile-area-scheme-dark fg-white">
+      <div class="row cells1">
+        <div class="cell">
+          <h1 class="leader">Chartfiller
+            <small id="version">v1.0.0</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="row cells12">
+        <div class="cell colspan4">
+          <div class="tile-area" style="height: 100%; max-height: 100% !important;padding:0">
+
+            <div class="tile-group">
+              <span class="tile-group-title">General Settings</span>
+              <div class="tile-container">
+
+                <a id="btnSettings" href="#" class="tile tile-wide-x bg-teal fg-white" data-role="tile">
+                  <div class="tile-content iconic">
+                    <span class="icon mif-cogs"></span>
+                  </div>
+                  <span class="tile-label">Configure</span>
+                </a>
+
+
+                <a href="https://github.com/cmattoon/chartfiller/issues"
+                   class="tile bg-green fg-white" data-role="tile">
+                  <div class="tile-content iconic">
+                    <span class="icon mif-bug"></span>
+                  </div>
+                  <span class="tile-label">
+                    Bug Reports /<br> Feature Requests
+                  </span>
+                </a>
+
+                <!-- Charts -->
+                <a class="tile bg-blue fg-white" data-role="tile"
+                   href="https://www.emscharts.com">
+                  <div class="tile-content iconic">
+                    <span class="icon mif-cloud"></span>
+                  </div>
+                  <span class="tile-label">EMS Charts</span>
+                </a>
+
+                <!-- Chrome Web Store Link -->
+                <a href="https://chrome.google.com/webstore/detail/emscharts-filler/nbhcjidkipddkpjehegpgjiijedokgnf?hl=en"
+                   class="tile bg-darkRed fg-white" data-role="tile"
+                   title="Chartfiller on Chrome Web Store">
+                  <div class="tile-content iconic">
+                    <span class="icon mif-google"></span>
+                    <span class="tile-label">Chrome Store</span>
+                  </div>
+                </a>
+
+                <!-- Facebook -->
+                <a class="tile  bg-darkBlue fg-white" data-role="tile"
+                   href="https://www.facebook.com/chartfiller"
+                   title="Facebook">
+                  <div class="tile-content iconic">
+                    <span class="icon mif-facebook"></span>
+                    <span class="tile-label">Facebook</span>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cell colspan7">
+          <div class="tabcontrol" data-role="tabcontrol">
+            <ul class="tabs">
+              <li><a href="#page2">Page 2</a></li>
+              <li><a href="#page3">Page 3</a></li>
+              <li><a href="#page4">Page 4</a></li>
+              <li><a href="#page5">Page 5</a></li>
+              <li><a href="#page6">Page 6</a></li>
+              <li><a href="#page7">Page 7</a></li>
+              <li><a href="#page8">Page 8</a></li>
+            </ul>
+
+            <div class="frames">
+              <div class="frame" id="page2">
+                <h4>Page 2 - CC/HPI</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid">
+                  <div class="row cells3">
+                    <div class="cell">
+                      <h5>Chief Complaint</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="PRMAIN_cc" class="emsc"></textarea>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <h5>History of Present Illness (HPI)</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="PRMAIN_hpi" class="emsc"></textarea>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <h5>Scene Description</h5>
+                      <div class="input-control textarea full-size"
+                           data-role="input" data-text-auto-resize="true">
+                        <textarea name="scene_description" class="emsc"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells12">
+                    <div class="cell">
+                      <label>Duration</label>
+                      <div class="input-control text full-size">
+                        <input name="PRMAIN_ccduration" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell colspan3">
+                      <label>(Units)</label>
+                      <div class="input-control select full-size">
+                        <select name="PRMAIN_ccdurunits">
+                          <option value="1235">Seconds</option>
+                          <option value="1240">Minutes</option>
+                          <option value="1245">Hours</option>
+                          <option value="1250">Days</option>
+                          <option value="1255">Weeks</option>
+                          <option value="1260">Months</option>
+                          <option value="1265">Years</option>
+                          <option value="1265">A long, long time ago</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="cell colspan8">
+                      <label>Patient Belongings</label>
+                      <div class="input-control text full-size">
+                        <input name="PRMAIN_belongings" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row cells12">
+                    <div class="cell colspan4">
+                      <label>Stretcher Purpose</label>
+                      <div class="input-control text full-size">
+                        <input name="stretcher_purpose_descr" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell colspan4">
+                      <label>First Agency Unit On Scene?</label>
+                      <div class="input-control select full-size">
+                        <select class="emsc" name="PRMAIN_first_on_scene">
+                          <option value="-25">Not Applicable</option>
+                          <option value="-20">Not Recorded</option>
+                          <option value="0">No</option>
+                          <option value="1">Yes</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell colspan4">
+                      <label>ALS Assessment</label>
+                      <div class="input-control select full-size">
+                        <select class="emsc" name="PRMAIN_first_on_scene">
+                          <option value="1">Not Completed</option>
+                          <option value="2">Completed for Suspected Illness</option>
+                          <option value="3">Completed for Rule-Out Diagnosis</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells3">
+                    <div class="cell">
+                      <label>Patient Moved via</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_moved_via" class="emsc">
+                          <option value="4880">Stretcher</option>
+                          <option value="4865">Assist/Walk</option>
+                          <option value="4885">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Position in Truck</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_position" class="emsc">
+                          <option value="4910">Semi-Fowlers</option>
+                          <option value="4895">Fowlers</option>
+                          <option value="4915">Sitting</option>
+                          <option value="4920">Supine</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Patient to Hospital via</label>
+                      <div class="input-control select full-size">
+                        <select name="pt_moved_from" class="emsc">
+                          <option value="4930">Assist/Walk</option>
+                          <option value="4935">Stretcher</option>
+                          <option value="4951">Wheelchair</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /page2 -->
+
+              <div class="frame" id="page3">
+                <h4>Page 3 - Neuro, GCS, Airway</h4>
+                <hr class="thin bg-grayLighter">
+
+                <div class="grid">
+                  <div class="row cells2">
+
+                    <div class="cell">
+                      <label>Level of Consciousness</label>
+                      <div class="input-control select full-size">
+                        <select name="head_conciousness" class="emsc">
+                          <option value="-1"> </option>
+                          <option value="21">Agitated</option>
+                          <option value="1">Alert</option>
+                          <option value="3">Responds to Pain</option>
+                          <option value="2">Responds to Voice</option>
+                          <option value="41">Restless</option>
+                          <option value="4">Unresponsive</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="cell">
+                      <label>Stroke Scale</label>
+                      <div class="input-control text full-size">
+                        <select name="stroke_scale">
+                          <option value="NULL"></option>
+                          <option value="3275">Cincinnati Negative</option>
+                          <option value="3280">Cincinnati Non-Conclusive</option>
+                          <option value="3285">Cincinnati Positive</option>
+                          <option value="3290">LA Negative</option>
+                          <option value="3295">LA Non-Conclusive</option>
+                          <option value="3300">LA Positive</option>
+                          <option value="4">MEND Negative</option>
+                          <option value="5">MEND Non-Conclusive</option>
+                          <option value="6">MEND Positive</option>
+                          <option value="1">Massachusetts Negative</option>
+                          <option value="2">Massachusetts Non-Conclusive</option>
+                          <option value="3">Massachusetts Positive</option>
+                          <option value="7">NIH Negative</option>
+                          <option value="8">NIH Non-Conclusive</option>
+                          <option value="9">NIH Positive</option>
+                          <option value="-25">Not Applicable</option>
+                          <option value="-5">Not Available</option>
+                          <option value="-10">Not Known</option>
+                          <option value="10">Other Stroke Scale Negative</option>
+                          <option value="11">Other Stroke Scale Non-Conclusive</option>
+                          <option value="12">Other Stroke Scale Positive</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row cells3">
+                    <div class="cell">
+                      <label>Neuro Comments/Head Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="head_findings" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Airway Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="AIR_COMMENTS" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /page3 -->
+
+              <div class="frame" id="page4">
+                <h4>Page 4 - Cardio/Respiratory</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid">
+                  <div class="row cells2">
+                    <div class="cell">
+                      <label>Cardiovascular Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="cv_comments" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Respiratory Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="RESP_COMMENTS" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row cells8">
+                    <div class="cell">
+                      <label>Radial (Left)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_RAD_L" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Radial (Right)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_RAD_R" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Femoral (Left)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_FEM_L" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Femoral (Right)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_FEM_R" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Carotid (Left)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_FEM_L" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Carotid (Right)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_FEM_R" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Dorsalis (Left)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_DORS_L" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Dorsalis (Right)</label>
+                      <div class="input-control select full-size">
+                        <select name="PULSE_DORS_R" class="emsc">
+                          <option value=""></option>
+                          <option value="1">Strong</option>
+                          <option value="22">Normal</option>
+                          <option value="4">Not Checked</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /page4 -->
+
+              <div class="frame" id="page5">
+                <h4>Page 5 - Secondary Survey</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid">
+                  <div class="row cells2">
+                    <div class="cell">
+                      <label>Head Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="head_comments" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Neck Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="neck_comments" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells2">
+                    <div class="cell">
+                      <label>Chest Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="chest_comments" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Back Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="back_comments" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells4">
+                    <div class="cell">
+                      <label>Abdomen (Apearance)</label>
+                      <div class="input-control text full-size">
+                        <input name="ap_appearance" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Abdomen (Palpation)</label>
+                      <div class="input-control text full-size">
+                        <input name="ap_palpation" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Abdomen (Bowel Sounds)</label>
+                      <div class="input-control text full-size">
+                        <input name="ap_bowel_sounds" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Abdomen (Comments)</label>
+                      <div class="input-control text full-size">
+                        <input name="ap_findings" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row cells3">
+                    <div class="cell">
+                      <label>Extremity Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="ex_comments" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Skin Findings</label>
+                      <div class="input-control text full-size">
+                        <input name="ex_skin_findings" class="emsc">
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>Restraints</label>
+                      <div class="input-control text full-size">
+                        <input name="ex_restraints" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /page5 -->
+
+              <div class="frame" id="page6">
+                <h4>Page 6 - Labs, Fluids</h4>
+                <hr class="thin bg-grayLighter">
+                <em>Chartfiller is intended to help with writing charts for
+                  everyday patients, so this page isn't a feature yet.</em>
+              </div><!-- /page6 -->
+
+              <div class="frame" id="page7">
+                <h4>Page 7 - Meds, IVs, PTA</h4>
+                <hr class="thin bg-grayLighter">
+                <em>Chartfiller is intended to help with writing charts for
+                  everyday patients, so this page isn't a feature yet.</em>
+              </div><!-- /page7 -->
+
+              <div class="frame" id="page8">
+                <h4>Page 8 - Activity Log</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid">
+                  <div class="row cells12">
+                    <div class="cell colspan2">
+                      <label class="input-control checkbox small-check">
+                        <input type="checkbox" name="enable[at_ref]">
+                        <span class="check"></span>
+                        <span class="caption">At Referring
+                          <br><small>(On-Scene)</small></span>
+                      </label>
+                    </div>
+                    <div class="cell colspan10">
+                      <label>Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="page8[at_ref]" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row cells12">
+                    <div class="cell colspan2">
+                      <label class="input-control checkbox small-check">
+                        <input type="checkbox" name="enable[lv_ref]">
+                        <span class="check"></span>
+                        <span class="caption">Leave Referring
+                          <br><small>(Transporting)</small></span>
+                      </label>
+                    </div>
+                    <div class="cell colspan10">
+                      <label>Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="page8[lv_ref]" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row cells12">
+                    <div class="cell colspan2">
+                      <label class="input-control checkbox small-check">
+                        <input type="checkbox" name="enable[at_rec]">
+                        <span class="check"></span>
+                        <span class="caption">At Receiving
+                          <br><small>(At Hospital)</small></span>
+                      </label>
+                    </div>
+                    <div class="cell colspan10">
+                      <label>Comments</label>
+                      <div class="input-control text full-size">
+                        <input name="page8[at_rec]" class="emsc">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- /page8 -->
+
+            </div><!-- / .frames -->
+          </div><!-- / .tabcontrol -->
+        </div>
+      </div>
+
+      <div id="chSettings" data-role="charm" data-position="left">
+        <h3>General Settings</h3>
+        <hr class="thin">
+        <div class="grid">
+          <div class="row cells1">
+            <div class="cell">
+              <label class="switch">
+                <input type="checkbox" name="enable_sync" class="config">
+                <span class="check"></span>
+              </label>
+              <label>Enable Sync storage? </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="game-wrap">
+        <div class="prose"></div>
+        <div class="clr">
+          <canvas width="200" height="400" id="game" class="left">If you can read this, your browser doesn't support the canvas element. Please upgrade to a better browser.</canvas>
+          <canvas style="display:none;"width="100" height="450" id="info" class="left"></canvas>
+        </div>
+        <ul>
+          <li>Move the shapes with the arrow keys.</li>
+          <li>Rotate piece with the <strong>UP</strong> key,
+            <strong>z</strong>,
+            and <strong>x</strong>.
+            </li>
+          <li>Pause the game with <strong>p</strong></li>
+          <li>Toggle autopilot mode with the back tick (the key that has <strong>~</strong> on it).</li>
+        </ul>
+      </div>
+
+      <script src="js/jquery.js"></script>
+      <script src="js/metro.js"></script>
+      <script src="js/tetris.js"></script>
+      <script src="js/cheet.min.js"></script>
+      <script src="js/options.js"></script>
   </body>
 </html>
