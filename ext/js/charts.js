@@ -1,27 +1,18 @@
-/**
- * This file is injected into each page.
- */
-var ChartPage = {
-    page: '',
-    fields: [],
-    init: function(fields) {
+var PageMenu = {
+    btnFill: null,
+    fields: {},
+    init: function() {
         var self = this;
-        self.fields = fields || [];
-        $('.headerTable').append(self.getButton());
-    },
-    fill: function() {
-        var self = this;
-        if (self.page) {
-            chrome.extension.sendMessage({
-                greeting: window.location.pathname
-            }, function(response) {
-                for (var key in response) {
-                    if (key && response.hasOwnProperty(key)) {
-                        $('input[name="' + key + '"]').val( response[key] );
-                    }
-                }
-            });
-        }
+        self.btnFill = self.getButton();
+        $('.headerTable').append(self.btnFill);
+
+        self.getFields();
+
+        self.highlightFields();
+
+        self.btnFill.click(function() {
+            self.fillFields();
+        });
     },
     /**
      * Creates the main 'AutoComplete' button.
@@ -41,32 +32,51 @@ var ChartPage = {
             'cursor':'pointer'
         });
         return button;
+    },
+    getFields: function() {
+        var self = this;
+        chrome.extension.sendMessage({
+            greeting: window.location.pathname
+        },function(data) {
+            self.fields = data;
+        });
+    },
+    highlightFields: function() {
+        var self = this;
+        for (var key in self.fields) {
+            if (key && self.fields.hasOwnProperty(key)) {
+                var input = $('[name="' + key + '"]');
+                if (self.fields[key] != '') {
+                    input.css({'border':'1px solid #f80'});
+                }
+            }
+        }
+    },
+    fillFields: function(data) {
+        var self = this;
+        data = data || self.fields;
+
+        for (var key in data) {
+            if (key && data.hasOwnProperty(key)) {
+                var input = $('[name="' + key + '"]');
+                if (input.length) {
+                    switch (input[0].tagName)
+                    {
+                    case 'TEXTAREA':
+                        input.text( data[key] );
+                        break;
+                    case 'SELECT':
+                    case 'INPUT':
+                    default:
+                        input.val( data[key] );
+                        break;
+                    }
+                }
+            }
+        }
     }
 };
 
-/**
- * Apply an outline to inputs in emscharts
- * for which we have a stored default value.
- */
-function highlight_values() {
-
-}
-
-
-function
-
 $(document).ready(function() {
-    var valid = false;
-    var page = window.location.pathname;
-    var pages = ['page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8'];
-
-
-
-    for (var i = 0; i < pages.length; i++) {
-        if (page.indexOf(pages[i]) > -1) {
-            ChartPage.page = pages[i];
-            ChartPage.init(allFields[ pages[i] ]);
-            break;
-        }
-    }
+    PageMenu.init();
 });
