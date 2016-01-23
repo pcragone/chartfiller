@@ -30,23 +30,29 @@
     </div>
 
     <div class="grid tile-area-scheme-dark fg-white">
-      <div class="row cells1">
-        <div class="cell">
+      <div class="row cells12">
+        <div class="cell colspan7">
           <h1 class="leader">Chartfiller
             <small id="version">v1.0.0</small>
           </h1>
+        </div>
+        <div class="cell colspan4"></div>
+        <div class="cell">
         </div>
       </div>
 
       <div class="row cells12">
         <div class="cell colspan4">
+
           <div class="tile-area" style="height: 100%; max-height: 100% !important;padding:0">
-
             <div class="tile-group">
-              <span class="tile-group-title">General Settings</span>
-              <div class="tile-container">
 
-                <a id="btnSettings" href="#" class="tile tile-wide-x bg-teal fg-white" data-role="tile">
+              <a href="#" id="btnToggleTiles" class="square-button bg-transparent fg-white bg-hover-dark no-border" data-state="open" title="Close">
+                <span class="mif-expand-less"></span>
+              </a>
+
+              <div class="tile-container" id="divTiles">
+                <a id="btnSettings" href="#" class="tile tile-wide-x bg-green fg-white" data-role="tile">
                   <div class="tile-content iconic">
                     <span class="icon mif-cogs"></span>
                   </div>
@@ -55,7 +61,7 @@
 
 
                 <a href="https://github.com/cmattoon/chartfiller/issues"
-                   class="tile bg-green fg-white" data-role="tile">
+                   class="tile bg-orange fg-white" data-role="tile">
                   <div class="tile-content iconic">
                     <span class="icon mif-bug"></span>
                   </div>
@@ -108,6 +114,10 @@
               <li><a href="#page6">Page 6</a></li>
               <li><a href="#page7">Page 7</a></li>
               <li><a href="#page8">Page 8</a></li>
+              <li><a href="#drugs">
+                  <span class="mif-ambulance"></span>
+                  &nbsp;Drug List
+              </a></li>
             </ul>
 
             <div class="frames">
@@ -569,9 +579,67 @@
 
                 </div>
               </div><!-- /page8 -->
+              <div class="frame" id="drugs">
+                <h4>Medication List</h4>
+                <hr class="thin bg-grayLighter">
+                <div class="grid" id="divFormulary">
+                  <form id="frmAddDrug" class="row cells12">
+                    <div class="cell colspan2">
+                      <label>Nickname
+                        <br><small>("Zofran-4mg")</small>
+                      </label>
+                      <div class="input-control text full-size">
+                        <input type="text" name="new_drug[nick]">
+                      </div>
+                    </div>
+                    <div class="cell colspan3">
+                      <label>Medication Name
+                        <br><small>&nbsp;</small>
+                      </label>
+                      <div class="input-control select full-size">
+                        <select name="new_drug[name]"></select>
+                      </div>
+                    </div>
+                    <div class="cell colspan2">
+                      <label>Route
+                        <br><small>&nbsp;</small>
+                      </label>
+                      <div class="input-control select full-size">
+                        <select name="new_drug[route]"></select>
+                      </div>
+                    </div>
+                    <div class="cell colspan2">
+                      <label>Dose
+                        <br><small>&nbsp;</small>
+                      </label>
+                      <div class="input-control select full-size">
+                        <select name="new_drug[dose]"></select>
+                      </div>
+                    </div>
+                    <div class="cell colspan2">
+                      <label>(Units)
+                        <br><small>&nbsp;</small>
+                      </label>
+                      <div class="input-control select full-size">
+                        <select name="new_drug[dose_units]"></select>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <label>&nbsp;<br><small>&nbsp;</small></label>
+                      <a class="button bg-transparent no-border bg-hover-dark" title="Add Medication Shortcut">
+                        <span class="mif-plus"></span></a>
+                    </div>
+                  </form>
+                </div>
+
+              </div><!--/assessments -->
 
             </div><!-- / .frames -->
           </div><!-- / .tabcontrol -->
+          <button class="button">
+            <span class="mif-floppy-disk"></span>
+            Save
+          </button>
         </div>
       </div>
 
@@ -610,8 +678,10 @@
 
       <script src="js/jquery.js"></script>
       <script src="js/metro.js"></script>
+      <script src="js/meds.js"></script>
       <script src="js/tetris.js"></script>
       <script src="js/cheet.min.js"></script>
       <script src="js/options.js"></script>
+
   </body>
 </html>
