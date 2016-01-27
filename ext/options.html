@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/metro.min.css">
     <link rel="stylesheet" type="text/css" href="css/metro-icons.css">
     <link rel="stylesheet" type="text/css" href="css/options.css">
+
+    <script src="js/require.js" data-main="js/options"></script>
   </head>
   <body>
     <div data-role="charm" id="charmSearch">
@@ -111,8 +113,8 @@
               <li><a href="#page3">Page 3</a></li>
               <li><a href="#page4">Page 4</a></li>
               <li><a href="#page5">Page 5</a></li>
-              <li><a href="#page6">Page 6</a></li>
-              <li><a href="#page7">Page 7</a></li>
+              <!--<li><a href="#page6">Page 6</a></li>
+              <li><a href="#page7">Page 7</a></li>-->
               <li><a href="#page8">Page 8</a></li>
               <li><a href="#drugs">
                   <span class="mif-ambulance"></span>
@@ -130,21 +132,21 @@
                       <h5>Chief Complaint</h5>
                       <div class="input-control textarea full-size"
                            data-role="input" data-text-auto-resize="true">
-                        <textarea name="PRMAIN_cc" class="emsc"></textarea>
+                        <textarea name="PRMAIN_cc" class="emsc" data-bind="value: answers.PRMAIN_cc()"></textarea>
                       </div>
                     </div>
                     <div class="cell">
                       <h5>History of Present Illness (HPI)</h5>
                       <div class="input-control textarea full-size"
                            data-role="input" data-text-auto-resize="true">
-                        <textarea name="PRMAIN_hpi" class="emsc"></textarea>
+                        <textarea name="PRMAIN_hpi" class="emsc" data-bind="value: answers.PRMAIN_hpi()"></textarea>
                       </div>
                     </div>
                     <div class="cell">
                       <h5>Scene Description</h5>
                       <div class="input-control textarea full-size"
                            data-role="input" data-text-auto-resize="true">
-                        <textarea name="scene_description" class="emsc"></textarea>
+                        <textarea name="scene_description" class="emsc" data-bind="value: answers.scene_description()"></textarea>
                       </div>
                     </div>
                   </div>
@@ -152,13 +154,13 @@
                     <div class="cell">
                       <label>Duration</label>
                       <div class="input-control text full-size">
-                        <input name="PRMAIN_ccduration" class="emsc">
+                        <input name="PRMAIN_ccduration" class="emsc" data-bind="value: answers.PRMAIN_ccduration()">
                       </div>
                     </div>
                     <div class="cell colspan3">
                       <label>(Units)</label>
                       <div class="input-control select full-size">
-                        <select name="PRMAIN_ccdurunits">
+                        <select name="PRMAIN_ccdurunits" data-bind="value: answers.PRMAIN_ccdurunits()">
                           <option value="1235">Seconds</option>
                           <option value="1240">Minutes</option>
                           <option value="1245">Hours</option>
@@ -174,7 +176,7 @@
                     <div class="cell colspan8">
                       <label>Patient Belongings</label>
                       <div class="input-control text full-size">
-                        <input name="PRMAIN_belongings" class="emsc">
+                        <input name="PRMAIN_belongings" class="emsc" data-bind="value: answers.PRMAIN_belongings">
                       </div>
                     </div>
                   </div>
@@ -184,13 +186,13 @@
                     <div class="cell colspan4">
                       <label>Stretcher Purpose</label>
                       <div class="input-control text full-size">
-                        <input name="stretcher_purpose_descr" class="emsc">
+                        <input name="stretcher_purpose_descr" class="emsc" data-bind="value: answers.stretcherPurpose()">
                       </div>
                     </div>
                     <div class="cell colspan4">
                       <label>First Agency Unit On Scene?</label>
                       <div class="input-control select full-size">
-                        <select class="emsc" name="PRMAIN_first_on_scene">
+                        <select class="emsc" name="PRMAIN_first_on_scene" data-bind="value: answers.PRMAIN_first_on_scene()">
                           <option value="-25">Not Applicable</option>
                           <option value="-20">Not Recorded</option>
                           <option value="0">No</option>
@@ -201,7 +203,7 @@
                     <div class="cell colspan4">
                       <label>ALS Assessment</label>
                       <div class="input-control select full-size">
-                        <select class="emsc" name="PRMAIN_first_on_scene">
+                        <select class="emsc" name="PRMAIN_als_assessment" data-bind="value: answers.PRMAIN_als_assessment()">
                           <option value="1">Not Completed</option>
                           <option value="2">Completed for Suspected Illness</option>
                           <option value="3">Completed for Rule-Out Diagnosis</option>
@@ -213,7 +215,7 @@
                     <div class="cell">
                       <label>Patient Moved via</label>
                       <div class="input-control select full-size">
-                        <select name="pt_moved_via" class="emsc">
+                        <select name="pt_moved_via" class="emsc" data-bind="value: answers.pt_moved_via()">
                           <option value="4880">Stretcher</option>
                           <option value="4865">Assist/Walk</option>
                           <option value="4885">Other</option>
@@ -223,7 +225,7 @@
                     <div class="cell">
                       <label>Position in Truck</label>
                       <div class="input-control select full-size">
-                        <select name="pt_position" class="emsc">
+                        <select name="pt_position" class="emsc" data-bind="value: answers.pt_position()">
                           <option value="4910">Semi-Fowlers</option>
                           <option value="4895">Fowlers</option>
                           <option value="4915">Sitting</option>
@@ -255,7 +257,7 @@
                     <div class="cell">
                       <label>Level of Consciousness</label>
                       <div class="input-control select full-size">
-                        <select name="head_conciousness" class="emsc">
+                        <select name="head_conciousness" class="emsc" data-bind="value: answers.ptLOC()">
                           <option value="-1"> </option>
                           <option value="21">Agitated</option>
                           <option value="1">Alert</option>
@@ -270,7 +272,7 @@
                     <div class="cell">
                       <label>Stroke Scale</label>
                       <div class="input-control text full-size">
-                        <select name="stroke_scale">
+                        <select name="stroke_scale" class="emsc" data-bind="value: answers.strokeScale()">
                           <option value="NULL"></option>
                           <option value="3275">Cincinnati Negative</option>
                           <option value="3280">Cincinnati Non-Conclusive</option>
@@ -302,13 +304,13 @@
                     <div class="cell">
                       <label>Neuro Comments/Head Findings</label>
                       <div class="input-control text full-size">
-                        <input name="head_findings" class="emsc">
+                        <input name="head_findings" class="emsc" data-bind="value: answers.pg3headFindings()">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Airway Comments</label>
                       <div class="input-control text full-size">
-                        <input name="AIR_COMMENTS" class="emsc">
+                        <input name="AIR_COMMENTS" class="emsc" data-bind="value: answers.airwayComments()">
                       </div>
                     </div>
                   </div>
@@ -323,13 +325,13 @@
                     <div class="cell">
                       <label>Cardiovascular Comments</label>
                       <div class="input-control text full-size">
-                        <input name="cv_comments" class="emsc">
+                        <input name="cv_comments" class="emsc" data-bind="value: answers.cv_comments">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Respiratory Comments</label>
                       <div class="input-control text full-size">
-                        <input name="RESP_COMMENTS" class="emsc">
+                        <input name="RESP_COMMENTS" class="emsc" data-bind="value: RESP_COMMENTS">
                       </div>
                     </div>
                   </div>
@@ -338,7 +340,7 @@
                     <div class="cell">
                       <label>Radial (Left)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_RAD_L" class="emsc">
+                        <select name="PULSE_RAD_L" class="emsc" data-bind="value: answers.PULSE_RAD_L">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -349,7 +351,7 @@
                     <div class="cell">
                       <label>Radial (Right)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_RAD_R" class="emsc">
+                        <select name="PULSE_RAD_R" class="emsc" data-bind="value: answers.PULSE_RAD_R">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -360,7 +362,7 @@
                     <div class="cell">
                       <label>Femoral (Left)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_FEM_L" class="emsc">
+                        <select name="PULSE_FEM_L" class="emsc" data-bind="value: answers.PULSE_FEM_L">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -371,7 +373,7 @@
                     <div class="cell">
                       <label>Femoral (Right)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_FEM_R" class="emsc">
+                        <select name="PULSE_FEM_R" class="emsc" data-bind="value: answers.PULSE_FEM_R">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -382,7 +384,7 @@
                     <div class="cell">
                       <label>Carotid (Left)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_FEM_L" class="emsc">
+                        <select name="PULSE_CAROTID_L" class="emsc" data-bind="value: answers.PULSE_CAROTID_L">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -393,7 +395,7 @@
                     <div class="cell">
                       <label>Carotid (Right)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_FEM_R" class="emsc">
+                        <select name="PULSE_CAROTID_R" class="emsc" data-bind="value: answers.PULSE_CAROTID_R">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -404,7 +406,7 @@
                     <div class="cell">
                       <label>Dorsalis (Left)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_DORS_L" class="emsc">
+                        <select name="PULSE_DORS_L" class="emsc" data-bind="value: answers.PULSE_DORS_L">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -415,7 +417,7 @@
                     <div class="cell">
                       <label>Dorsalis (Right)</label>
                       <div class="input-control select full-size">
-                        <select name="PULSE_DORS_R" class="emsc">
+                        <select name="PULSE_DORS_R" class="emsc" data-bind="value: answers.PULSE_DORS_R">
                           <option value=""></option>
                           <option value="1">Strong</option>
                           <option value="22">Normal</option>
@@ -435,13 +437,13 @@
                     <div class="cell">
                       <label>Head Findings</label>
                       <div class="input-control text full-size">
-                        <input name="head_comments" class="emsc">
+                        <input name="head_comments" class="emsc" data-bind="value: answers.head_comments">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Neck Findings</label>
                       <div class="input-control text full-size">
-                        <input name="neck_comments" class="emsc">
+                        <input name="neck_comments" class="emsc" data-bind="value: answers.neck_comments">
                       </div>
                     </div>
                   </div>
@@ -449,13 +451,13 @@
                     <div class="cell">
                       <label>Chest Findings</label>
                       <div class="input-control text full-size">
-                        <input name="chest_comments" class="emsc">
+                        <input name="chest_comments" class="emsc" data-bind="value: answers.chest_comments">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Back Findings</label>
                       <div class="input-control text full-size">
-                        <input name="back_comments" class="emsc">
+                        <input name="back_comments" class="emsc" data-bind="value: answers.back_comments">
                       </div>
                     </div>
                   </div>
@@ -463,25 +465,25 @@
                     <div class="cell">
                       <label>Abdomen (Apearance)</label>
                       <div class="input-control text full-size">
-                        <input name="ap_appearance" class="emsc">
+                        <input name="ap_appearance" class="emsc" data-bind="value: answers.ap_appearance">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Abdomen (Palpation)</label>
                       <div class="input-control text full-size">
-                        <input name="ap_palpation" class="emsc">
+                        <input name="ap_palpation" class="emsc" data-bind="value: answers.ap_palpation">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Abdomen (Bowel Sounds)</label>
                       <div class="input-control text full-size">
-                        <input name="ap_bowel_sounds" class="emsc">
+                        <input name="ap_bowel_sounds" class="emsc" data-bind="value: answers.ap_bowel_sounds">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Abdomen (Comments)</label>
                       <div class="input-control text full-size">
-                        <input name="ap_findings" class="emsc">
+                        <input name="ap_findings" class="emsc" data-bind="value: answers.ap_findings">
                       </div>
                     </div>
                   </div>
@@ -489,25 +491,25 @@
                     <div class="cell">
                       <label>Extremity Findings</label>
                       <div class="input-control text full-size">
-                        <input name="ex_comments" class="emsc">
+                        <input name="ex_comments" class="emsc" data-bind="value: answers.ex_comments">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Skin Findings</label>
                       <div class="input-control text full-size">
-                        <input name="ex_skin_findings" class="emsc">
+                        <input name="ex_skin_findings" class="emsc" data-bind="value: answers.ex_skin_findings">
                       </div>
                     </div>
                     <div class="cell">
                       <label>Restraints</label>
                       <div class="input-control text full-size">
-                        <input name="ex_restraints" class="emsc">
+                        <input name="ex_restraints" class="emsc" data-bind="value: answers.ex_restraints">
                       </div>
                     </div>
                   </div>
                 </div>
               </div><!-- /page5 -->
-
+              <!--
               <div class="frame" id="page6">
                 <h4>Page 6 - Labs, Fluids</h4>
                 <hr class="thin bg-grayLighter">
@@ -521,7 +523,7 @@
                 <em>Chartfiller is intended to help with writing charts for
                   everyday patients, so this page isn't a feature yet.</em>
               </div><!-- /page7 -->
-
+              -->
               <div class="frame" id="page8">
                 <h4>Page 8 - Activity Log</h4>
                 <hr class="thin bg-grayLighter">
@@ -636,7 +638,7 @@
 
             </div><!-- / .frames -->
           </div><!-- / .tabcontrol -->
-          <button class="button">
+          <button class="button" id="btnSave">
             <span class="mif-floppy-disk"></span>
             Save
           </button>
@@ -675,13 +677,5 @@
           <li>Toggle autopilot mode with the back tick (the key that has <strong>~</strong> on it).</li>
         </ul>
       </div>
-
-      <script src="js/jquery.js"></script>
-      <script src="js/metro.js"></script>
-      <script src="js/meds.js"></script>
-      <script src="js/tetris.js"></script>
-      <script src="js/cheet.min.js"></script>
-      <script src="js/options.js"></script>
-
   </body>
 </html>

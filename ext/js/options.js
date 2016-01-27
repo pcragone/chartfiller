@@ -1,3 +1,33 @@
+require.config({
+    paths: {
+        "jquery": "jquery",
+        "knockout": "knockout-3.4.0",
+    }
+});
+require([
+    "jquery",
+    "knockout",
+    "app",
+    "cheet.min",
+    "tetris",
+    "metro"
+], function($, ko, App, cheet, tetris, metro) {
+    "use strict";
+
+    $('#document').ready(function() {
+        ko.applyBindings(new App());
+
+        cheet('↑ ↑ ↓ ↓ ← → ← → b a', konami);
+
+        $('#btnToggleTiles').click(toggleTiles);
+
+        $('#btnSettings').click(function() {
+            showCharm('#chSettings');
+        });
+    });
+
+});
+
 function konami() {
     $.Notify({
         caption: 'Achievement Unlocked',
@@ -37,15 +67,3 @@ function toggleTiles() {
         .removeClass('mif-expand-more')
         .addClass('mif-' + icon);
 }
-
-$(function() {
-    "use strict";
-
-    cheet('↑ ↑ ↓ ↓ ← → ← → b a', konami);
-
-    $('#btnToggleTiles').click(toggleTiles);
-
-    $('#btnSettings').click(function() {
-        showCharm('#chSettings');
-    });
-});
