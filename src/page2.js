@@ -18,6 +18,13 @@ $(document).ready(function() {
             var position = response.position;
             var first_on_scene = response.first_on_scene;
             var stretcher_purpose = response.stretcher_purpose;
+
+            // var reason_encounter = response.reason_encounter;
+            // var alcohol = response.alcohol;
+
+            // var factors_affecting_care_dispatch = response.factors_affecting_care_dispatch;
+            // var factors_affecting_care_factors = response.factors_affecting_care_factors;
+            // var factors_affecting_care_turnaround = response.factors_affecting_care_turnaround;
             
             
             $('input[name=PRMAIN_ccduration]').val(cc_duration);
@@ -34,6 +41,18 @@ $(document).ready(function() {
             $('select[name=pt_moved_via]').val(to_truck);
             $('select[name=pt_position]').val(position);
             $('select[name=pt_moved_from]').val(from_truck);
+
+
+            $('input[type="text"][name="dfactors_text"]').val('None');
+            $('input[type="hidden"][name="dfactors"]').val('105');
+            $('input[type="text"][name="factors_text"]').val('None');
+            $('input[type="hidden"][name="factors"]').val('16');
+            $('input[type="text"][name="tafactors_text"]').val('None');
+            $('input[type="hidden"][name="tafactors"]').val('360');
+
+
+            $('select[name="reason_encounter"]').val('0');
+            $('select[name="alcohol"]').val('99');
         });
     });
 });

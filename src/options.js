@@ -34,10 +34,11 @@
     "pg2_to_truck",
     "pg2_position",
     "pg2_from_truck",
+    "pg3_head_consciousness",
     "pg3_stroke_scale",
     "pg3_gcs_eye",
     "pg3_gcs_verbal",
-    "pg3_gcs_verbal",
+    "pg3_gcs_motor",
     "pg4_radial_l",
     "pg4_radial_r",
     "pg4_fem_l",
@@ -51,65 +52,86 @@
     "pg2_first_on_scene"
     ];
 
-function save_options() {
+    var checkBoxes = [
+      "pg3_mental"
+    ];
 
-    
-    for (var i=0;i<txtInputs.length;i++) {
-        localStorage[txtInputs[i]] = document.getElementById(txtInputs[i]).value;
+function save_options() {
+  for (var i=0;i<txtInputs.length;i++) {
+    localStorage[txtInputs[i]] = document.getElementById(txtInputs[i]).value;
+  }
+      
+  for (var i=0;i<txtAreas.length;i++) {
+    localStorage[txtAreas[i]] = document.getElementById(txtAreas[i]).value;
+  }
+  
+  for (var i=0;i<selBoxes.length;i++) {
+     // localStorage[selBoxes[i]] = selBoxes[i].children[selBoxes[i].selectedIndex].value;
+    var j = document.getElementById(selBoxes[i]).selectedIndex;
+    localStorage[selBoxes[i]] = document.getElementById(selBoxes[i]).options[j].value;
+  }
+
+  for (var i = 0; i < checkBoxes.length; i++) {
+    els = document.getElementsByName(checkBoxes[i]);
+    var values = [], names = [];
+    for (var j = 0; j < els.length; j++) {
+      var checkBox = els[j];
+      if (checkBox.checked) {
+        values.push(checkBox.value);
+        names.push(checkBox.id.match(/pg3_mental_(.*)/)[1].replace(/_/, ' '));
+      }
     }
-        
-    for (var i=0;i<txtAreas.length;i++) {
-        localStorage[txtAreas[i]] = document.getElementById(txtAreas[i]).value;
-    }
-    
-    for (var i=0;i<selBoxes.length;i++) {
-       // localStorage[selBoxes[i]] = selBoxes[i].children[selBoxes[i].selectedIndex].value;
-            var j = document.getElementById(selBoxes[i]).selectedIndex;
-            localStorage[selBoxes[i]] = document.getElementById(selBoxes[i]).options[j].value;
-    }
-    
-    // Update status to let user know options were saved.
-    var status = document.getElementById("status");
-    status.innerHTML = "OPTIONS SAVED";
-    setTimeout(function() {
-        status.innerHTML = "";
-    }, 2000);
+    localStorage[checkBoxes[i] + '_value'] = values.join(',');
+    localStorage[checkBoxes[i] + '_name'] = names.join(',');
+  }
+  
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "OPTIONS SAVED";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 2000);
 }
 
 // Restores select box state to saved value from localStorage.
 function restore_options() {
+  for (var i=0;i<txtInputs.length;i++) {
+    if (localStorage[txtInputs[i]]=="undefined") {
+    } else {
+      document.getElementById(txtInputs[i]).value = localStorage[txtInputs[i]];
+    }
+  }
+  
+  for (var i=0;i<txtAreas.length;i++) {
+    if (localStorage[txtAreas[i]]=="undefined") {
+    } else {
+      document.getElementById(txtAreas[i]).value = localStorage[txtAreas[i]];
+    }
+  }
+  
+  for (var i=0;i<selBoxes.length;i++) {
+    if (localStorage[selBoxes[i]]=="undefined") {
+    } else {
+      console.log(selBoxes[i]);
+      console.log(localStorage[selBoxes[i]]);
+      el = document.getElementById(selBoxes[i]);
+      el.value = localStorage[selBoxes[i]];
+    }
+  }
 
-    
-    for (var i=0;i<txtInputs.length;i++) {
-    	if (localStorage[txtInputs[i]]=="undefined")
-    	{
-    	}
-    	else
-    	{
-        document.getElementById(txtInputs[i]).value = localStorage[txtInputs[i]];
-        }
+  for (var i = 0; i < checkBoxes.length; i++) {
+    els = document.getElementsByName(checkBoxes[i]);
+    var values = localStorage[checkBoxes[i] + '_value'];
+    for (var j = 0; j < els.length; j++) {
+      var checkBox = els[j];
+      if (values.includes(checkBox.value)) {
+        checkBox.checked = true;
+      } else {
+        checkBox.checked = false;
+      } 
     }
-    
-    for (var i=0;i<txtAreas.length;i++) {
-    if (localStorage[txtAreas[i]]=="undefined")
-    	{
-    	}
-    	else
-    	{
-        document.getElementById(txtAreas[i]).value = localStorage[txtAreas[i]];
-        }
-    }
-    
-    for (var i=0;i<selBoxes.length;i++) {
-    if (localStorage[selBoxes[i]]=="undefined")
-    	{
-    	}
-    	else
-    	{
-        selBoxes[i].children[selBoxes[i].selectedIndex].value = localStorage[selBoxes[i]];
-        }
-    }
-    
+  }
 }
+
 document.addEventListener('DOMContentLoaded', restore_options);
 document.querySelector('#save').addEventListener('click', save_options);

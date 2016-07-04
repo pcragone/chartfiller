@@ -4,7 +4,7 @@ $(document).ready(function() {
         collapsible: true
     });
     $( "button" )
-    .button()
+    // .button()
     .click(function( event ) {
         event.preventDefault();
     });

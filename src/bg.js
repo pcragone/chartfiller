@@ -17,6 +17,9 @@ chrome.extension.onMessage.addListener(
             });
         else if(request.greeting == "pg3")
             sendResponse({
+                head_consciouness : localStorage["pg3_head_consciousness"],
+                mental_value : localStorage["pg3_mental_value"],
+                mental_name : localStorage["pg3_mental_name"],
                 neuro_comments : localStorage["pg3_neuro_comments"],
                 stroke_scale : localStorage["pg3_stroke_scale"],
                 gcs_eye : localStorage["pg3_gcs_eye"],
