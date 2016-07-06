@@ -5,6 +5,10 @@ $(document).ready(function() {
         chrome.extension.sendMessage({
             greeting: "pg4"
         }, function(response) {
+          console.log(response);
+            var breath_r = response.breath_r;
+            var breath_l = response.breath_l;
+            var breath_comments = response.breath_comments;
             var resp_comments = response.resp_comments;
             var cardiac_comments = response.cardiac_comments;
             var carotid_r = response.carotid_r;
@@ -16,6 +20,12 @@ $(document).ready(function() {
             var dors_r = response.dors_r;
             var dors_l = response.dors_l;
 
+            if (breath_r != '') {
+                $('select[name=cv_breath_sounds_r]').attr('value',breath_r);
+            }
+            if (breath_l != '') {
+                $('select[name=cv_breath_sounds_l]').attr('value',breath_l);
+            }
             if (carotid_r != '') {
                 $('select[name=PULSE_CAROTID_R]').attr('value',carotid_r);
             }
@@ -40,6 +50,7 @@ $(document).ready(function() {
             if (dors_l != '') {
                 $('select[name=PULSE_DORS_L]').attr('value',dors_l);
             }
+            $('input[name=cv_breath_comments]').val(breath_comments);
             $('input[name=cv_comments]').val(cardiac_comments);
             $('input[name=RESP_COMMENTS]').val(resp_comments);
         });

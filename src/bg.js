@@ -28,10 +28,13 @@ chrome.extension.onMessage.addListener(
             });
         else if (request.greeting == "pg4")
             sendResponse({
+                breath_r : localStorage["pg4_breath_r"],
+                breath_l : localStorage["pg4_breath_l"],
+                breath_comments : localStorage["pg4_breath_comments"],
                 resp_comments : localStorage["pg4_resp_comments"],
                 cardiac_comments : localStorage["pg4_cardiac_comments"],
                 carotid_r : localStorage["pg4_carotid_r"],
-                carotid_l : localStorage["pg4_carotid_r"],
+                carotid_l : localStorage["pg4_carotid_l"],
                 radial_r : localStorage["pg4_radial_r"],
                 radial_l : localStorage["pg4_radial_l"],
                 fem_r : localStorage["pg4_fem_r"],
